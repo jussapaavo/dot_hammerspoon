@@ -100,9 +100,14 @@ function if_finder_then_open_file_in_vscode()
 end
 hs.hotkey.bind({"cmd", "alt"}, "down", if_finder_then_open_file_in_vscode)
 
+-- Custom hotkey for toggling caps lock
+print("Set hotkey for toggling caps lock")
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f19", function() hs.hid.capslock.toggle(); end)
+
 -- Global hotkey for muting microphone
 hs.loadSpoon("MicMute")
 customBindings = {
     toggle = {{"ctrl", "cmd", "alt"}, "m"}
 }
 spoon.MicMute:bindHotkeys(customBindings, 1)
+
