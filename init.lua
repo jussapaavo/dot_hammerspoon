@@ -18,10 +18,10 @@
 hyper_mod = {"shift", "ctrl", "alt", "cmd"}
 
 -- Load local configs/plugins
-hyper = require("hyper")
-require("movewindows")
-require("hotkeys")
---require("debug")
+hyper = require("modules.hyper")
+require("modules.movewindows")
+require("modules.hotkeys")
+--require("modules.debug")
 
 -- Reload config on file changes
 hs.loadSpoon("ReloadConfiguration")

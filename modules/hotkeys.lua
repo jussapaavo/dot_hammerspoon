@@ -107,7 +107,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f19", function() hs.hid.capslock.toggle(
 -- Global hotkey for muting microphone
 hs.loadSpoon("MicMute")
 customBindings = {
-    toggle = {{"ctrl", "cmd", "alt"}, "m"}
+    toggle = {{"cmd", "alt", "ctrl"}, "m"}
 }
 spoon.MicMute:bindHotkeys(customBindings, 1)
 
