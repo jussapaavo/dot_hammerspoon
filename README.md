@@ -8,7 +8,6 @@ Intelligent macOS automation.
 - [MicMute.spoon](https://github.com/Hammerspoon/Spoons/blob/master/Spoons/MicMute.spoon.zip)
 - [ReloadConfiguration.spoon](https://github.com/Hammerspoon/Spoons/blob/master/Spoons/ReloadConfiguration.spoon.zip)
 
-
 ## Modules
 
 - [debug](./debug.lua): Utility scripts to help debugging.
@@ -21,3 +20,4 @@ Intelligent macOS automation.
 
 - Install [Hammerspoon](https://www.hammerspoon.org/)
 - Clone the contents of this repository to `~/.hammerspoon/`
+- Install dependencies either via [dotfiles](https://github.com/jussapaavo/dotfiles) or by directly installing the Spoons to the [Spoons](./Spoons/) directory.
