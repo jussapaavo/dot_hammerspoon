@@ -11,13 +11,14 @@ Intelligent macOS automation.
 ## Modules
 
 - [debug](./debug.lua): Utility scripts to help debugging.
-- [hotkeys](./hotkeys.lua): Personal hotkey preferences.
-- [hyper](./hyper.lua): Set custom hyper key to use with hotkeys.
-- [init](./init.lua): The main entrypoint and configuration file.
-- [movewindows](./movewindows.lua)  Hotkeys for window management.
+- [hotkeys](./hotkeys.lua): Personal hotkey configuration.
+- [hyper](./hyper.lua): Set a custom hyper key to use as modal with hotkeys.
+- [init](./init.lua): The main entrypoint and configuration file for Hammerspoon.
+- [movewindows](./movewindows.lua): Hotkeys for window management.
 
 ## Install
 
 - Install [Hammerspoon](https://www.hammerspoon.org/)
 - Clone the contents of this repository to `~/.hammerspoon/`
-- Install dependencies either via [dotfiles](https://github.com/jussapaavo/dotfiles) or by directly installing the Spoons to the [Spoons](./Spoons/) directory.
+- Install dependencies either via [dotfiles](https://github.com/jussapaavo/dotfiles/blob/main/.chezmoiexternal.toml)
+or by downloading and installing the Spoons directly from the [official repository](https://github.com/Hammerspoon/Spoons).

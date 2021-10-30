@@ -50,6 +50,7 @@ print("Custom Window Movements:")
 local grid = require "hs.grid"
 local mod_resize = {"ctrl", "alt"}
 local mod_move   = {"ctrl", "shift"}
+local mod_hyper  = {"shift", "ctrl", "alt", "cmd"}
 
 grid.MARGINX = 0
 grid.MARGINY = 0
@@ -59,5 +60,5 @@ grid.GRIDWIDTH = 2
 --resize windows
 hs.hotkey.bind(mod_move, 'UP', grid.pushWindowUp) --grid.resizeWindowShorter)
 hs.hotkey.bind(mod_move, 'DOWN', grid.pushWindowDown) --grid.resizeWindowTaller)
-hs.hotkey.bind(hyper_mod, 'RIGHT', grid.resizeWindowWider)
-hs.hotkey.bind(hyper_mod, 'LEFT', grid.resizeWindowThinner)
+hs.hotkey.bind(mod_hyper, 'RIGHT', grid.resizeWindowWider)
+hs.hotkey.bind(mod_hyper, 'LEFT', grid.resizeWindowThinner)

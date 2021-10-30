@@ -1,7 +1,7 @@
 -- Launch apps with a hotkey
 -- Note: Use Apparency to find bundle IDs
 -- Note: Match application name to the first menu item name of the app
--- Inspiration from: https://github.com/evantravers/hammerspoon-config/blob/38a7d8c0ad2190d1563d681725628e4399dcbe6c/hyper.lua
+-- Inspiration from: https://github.com/evantravers/hammerspoon-config
 config = {}
 config.applications = {
     ['kitty'] = {
@@ -110,4 +110,3 @@ customBindings = {
     toggle = {{"cmd", "alt", "ctrl"}, "m"}
 }
 spoon.MicMute:bindHotkeys(customBindings, 1)
-

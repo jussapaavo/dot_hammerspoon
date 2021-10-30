@@ -1,21 +1,14 @@
--- Hammerspoon with:
--- - Reload Configuration
--- - Lunette (Window manager)
--- - MicMute
--- - Caffeine
--- - Commander
--- - Seal
--- - Shade
--- - SpoonInstall
-
 -- Ideas:
--- - Focus on video meeting window (Teams, Google Meets, Zoom) with a hotkey
 -- - Reload Hammerspoon config with a hotkey
+-- - Focus on video meeting window (Teams, Google Meets, Zoom) with a hotkey, see here for a solution: https://github.com/evantravers/hammerspoon-config/tree/master/Spoons/Teamz.spoon
 -- - Intelligent window movement (if at half size, move window to up or bottom third / corner) Solution maybe here? https://github.com/wangshub/hammerspoon-config/blob/master/window/window.lua
--- - Headspaces: http://evantravers.com/articles/2021/03/20/headspace-v1-0/
--- - Open new window in Finder if not active in current space
-
-hyper_mod = {"shift", "ctrl", "alt", "cmd"}
+-- - Implement Headspaces: http://evantravers.com/articles/2021/03/20/headspace-v1-0/
+-- - Install new Spoons:
+--   - Caffeine
+--   - Commander
+--   - Seal
+--   - Shade
+--   - SpoonInstall
 
 -- Load local configs/plugins
 hyper = require("modules.hyper")
