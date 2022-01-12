@@ -4,6 +4,7 @@ Intelligent macOS automation.
 
 ## Dependencies
 
+- [Hyper.spoon](https://github.com/evantravers/Hyper.spoon)
 - [Lunette.spoon](https://github.com/scottwhudson/Lunette/blob/master/Spoons/Lunette.spoon.zip)
 - [MicMute.spoon](https://github.com/Hammerspoon/Spoons/blob/master/Spoons/MicMute.spoon.zip)
 - [ReloadConfiguration.spoon](https://github.com/Hammerspoon/Spoons/blob/master/Spoons/ReloadConfiguration.spoon.zip)
@@ -12,7 +13,6 @@ Intelligent macOS automation.
 
 - [debug](./debug.lua): Utility scripts to help debugging.
 - [hotkeys](./hotkeys.lua): Personal hotkey configuration.
-- [hyper](./hyper.lua): Set a custom hyper key to use as modal with hotkeys.
 - [init](./init.lua): The main entrypoint and configuration file for Hammerspoon.
 - [movewindows](./movewindows.lua): Hotkeys for window management.
 

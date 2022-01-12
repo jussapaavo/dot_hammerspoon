@@ -2,31 +2,38 @@
 -- Note: Use Apparency to find bundle IDs
 -- Note: Match application name to the first menu item name of the app
 -- Inspiration from: https://github.com/evantravers/hammerspoon-config
-config = {}
-config.applications = {
+Config = {}
+Config.applications = {
     ['kitty'] = {
         bundleID = 'net.kovidgoyal.kitty',
-        hotkey = '1',
-        tags = {'#coding'}
+        hyperKey = '1',
     },
     ['Code'] = {
         bundleID = "com.microsoft.VSCode",
-        hotkey = "2",
-        tags = {'#coding'}
+        hyperKey = "2",
     },
     ['Chrome'] = {
         bundleID = "com.google.Chrome",
-        hotkey = "3"
+        hyperKey = "3"
+    },
+    ['Drafts'] = {
+        bundleID = "com.agiletortoise.Drafts-OSX",
+        hyperKey = "d",
+        localBindings = {"d"}
     },
     ['Finder'] = {
         bundleID = "com.apple.finder",
-        hotkey = "f"
+        hyperKey = "f"
     },
     ['Spotify'] = {
         bundleID = 'com.spotify.client',
-        hotkey = "s"
+        hyperKey = "s"
     },
 }
+
+-- Initial config for Hyper
+Hyper = hs.loadSpoon('Hyper')
+Hyper:bindHotKeys({hyperKey = {{}, 'F19'}})
 
 -- Define function for launching applications
 launch_application = function(app_bundleID)
@@ -61,19 +68,24 @@ launch_finder = function(app_bundleID)
 end
 
 -- Bind hotkeys for launching applications
-for app_name, app_config in pairs(config.applications) do
+hs.fnutils.each(Config.applications, function(appConfig)
 
-    local app_bundleID = app_config.bundleID
-    local hotkey = app_config.hotkey
+    --print("AppLauncher: " .. app_name)
 
-    print("AppLauncher: " .. app_name)
-
-    if app_name == "Finder" then
-        hyper:bind({}, hotkey, function() launch_finder(app_bundleID); end)
-    else
-        hyper:bind({}, hotkey, function() launch_application(app_bundleID); end)
+    if appConfig.hyperKey then
+        if appConfig.bundleID == "com.apple.finder" then
+            Hyper:bind({}, appConfig.hyperKey, function() launch_finder(appConfig.bundleID); end)
+        else
+            Hyper:bind({}, appConfig.hyperKey, function() launch_application(appConfig.bundleID) end)
+        end
     end
-end
+
+    if appConfig.localBindings then
+        hs.fnutils.each(appConfig.localBindings, function(key)
+            Hyper:bindPassThrough(key, appConfig.bundleID)
+        end)
+    end
+end)
 
 -- Custom hotkey for Finder to open files in VSCode
 print("Set hotkey for opening files in VS Code")
