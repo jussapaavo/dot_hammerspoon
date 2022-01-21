@@ -122,3 +122,6 @@ customBindings = {
     toggle = {{"cmd", "alt", "ctrl"}, "m"}
 }
 spoon.MicMute:bindHotkeys(customBindings, 1)
+
+-- Hotkey for forcing Spotify playpause from media key
+hs.hotkey.bind({"cmd"}, "f8", function() hs.spotify.playpause(); end)
