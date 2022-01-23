@@ -4,36 +4,36 @@
 -- Inspiration from: https://github.com/evantravers/hammerspoon-config
 Config = {}
 Config.applications = {
-    ['kitty'] = {
-        bundleID = 'net.kovidgoyal.kitty',
-        hyperKey = '1',
+    ["kitty"] = {
+        bundleID = "net.kovidgoyal.kitty",
+        hyperKey = "1",
     },
-    ['Code'] = {
+    ["Code"] = {
         bundleID = "com.microsoft.VSCode",
         hyperKey = "2",
     },
-    ['Chrome'] = {
+    ["Chrome"] = {
         bundleID = "com.google.Chrome",
         hyperKey = "3"
     },
-    ['Drafts'] = {
+    ["Drafts"] = {
         bundleID = "com.agiletortoise.Drafts-OSX",
         hyperKey = "d",
         localBindings = {"d"}
     },
-    ['Finder'] = {
+    ["Finder"] = {
         bundleID = "com.apple.finder",
         hyperKey = "f"
     },
-    ['Spotify'] = {
-        bundleID = 'com.spotify.client',
+    ["Spotify"] = {
+        bundleID = "com.spotify.client",
         hyperKey = "s"
     },
 }
 
 -- Initial config for Hyper
-Hyper = hs.loadSpoon('Hyper')
-Hyper:bindHotKeys({hyperKey = {{}, 'F19'}})
+Hyper = hs.loadSpoon("Hyper")
+Hyper:bindHotKeys({hyperKey = {{}, "F19"}})
 
 -- Define function for launching applications
 launch_application = function(app_bundleID)
@@ -69,8 +69,6 @@ end
 
 -- Bind hotkeys for launching applications
 hs.fnutils.each(Config.applications, function(appConfig)
-
-    --print("AppLauncher: " .. app_name)
 
     if appConfig.hyperKey then
         if appConfig.bundleID == "com.apple.finder" then
