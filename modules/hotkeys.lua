@@ -123,3 +123,22 @@ spoon.MicMute:bindHotkeys(customBindings, 1)
 
 -- Hotkey for forcing Spotify playpause from media key
 Hyper:bind({"cmd"}, "s", function() hs.spotify.playpause(); end)
+
+-- Hotkey for pasting specific 1password item
+paste_1password_item = function()
+    -- Get session token for 1password
+    local session_token = hs.execute("security find-generic-password -gs 1password-master-key -w | op signin my --raw", true)
+
+    -- Open 1password session, get item, close session
+    local output_password = tostring(
+        hs.execute([[
+            export OP_SESSION_my=]] .. session_token .. [[
+            op get totp wprb4xeharjggo446kkntxxwqy
+            op signout
+        ]], true)
+    )
+
+    -- Paste output directly to cursor
+    hs.eventtap.keyStrokes(output_password)
+end
+Hyper:bind({"cmd"}, "v", paste_1password_item)
