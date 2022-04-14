@@ -127,13 +127,13 @@ Hyper:bind({"cmd"}, "s", function() hs.spotify.playpause(); end)
 -- Hotkey for pasting specific 1password item
 paste_1password_item = function()
     -- Get session token for 1password
-    local session_token = hs.execute("security find-generic-password -gs 1password-master-key -w | op signin my --raw", true)
+    local session_token = hs.execute("security find-generic-password -gs 1password-master-key -w | op signin --account my --raw", true)
 
     -- Open 1password session, get item, close session
     local output_password = tostring(
         hs.execute([[
             export OP_SESSION_my=]] .. session_token .. [[
-            op get totp wprb4xeharjggo446kkntxxwqy
+            op item get --otp wprb4xeharjggo446kkntxxwqy
             op signout
         ]], true)
     )
