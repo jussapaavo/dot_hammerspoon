@@ -14,19 +14,19 @@ customBindings = {
         {{"ctrl", "alt"}, "u"},
     },
     topRight = {
-        {{"ctrl", "alt"}, "up"},
+        {{"ctrl", "alt"}, "i"},
     },
     bottomLeft = {
         {{"ctrl", "alt"}, "j"},
     },
     bottomRight = {
-        {{"ctrl", "alt"}, "down"},
+        {{"ctrl", "alt"}, "k"},
     },
     fullScreen = {
         {{"ctrl", "alt", "cmd"}, "up"},
     },
     center = {
-        {{"ctrl", "alt"}, "c"},
+        {{"ctrl", "alt"}, "up"},
     },
     nextThird = false,
     prevThird = false,
