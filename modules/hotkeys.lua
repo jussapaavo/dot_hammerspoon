@@ -57,7 +57,9 @@ launch_finder = function(app_bundleID)
 
         if window_count == 1 then
             hs.osascript.applescript([[tell application id "com.apple.finder" to make new Finder window to home]])
-        elseif app:isFrontmost() then
+        end
+
+        if app:isFrontmost() then
             app:hide()
         else
             app:activate()
