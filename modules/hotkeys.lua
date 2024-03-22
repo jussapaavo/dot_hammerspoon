@@ -23,7 +23,7 @@ Config.applications = {
     },
     ["Finder"] = {
         bundleID = "com.apple.finder",
-        hyperKey = "f"
+        hyperKey = "a"
     },
     ["Spotify"] = {
         bundleID = "com.spotify.client",
