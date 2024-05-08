@@ -5,8 +5,6 @@ Intelligent macOS automation.
 ## Dependencies
 
 - [Hyper.spoon](https://github.com/evantravers/Hyper.spoon)
-- [Lunette.spoon](https://github.com/scottwhudson/Lunette/blob/master/Spoons/Lunette.spoon.zip)
-- [MicMute.spoon](https://github.com/Hammerspoon/Spoons/blob/master/Spoons/MicMute.spoon.zip)
 - [ReloadConfiguration.spoon](https://github.com/Hammerspoon/Spoons/blob/master/Spoons/ReloadConfiguration.spoon.zip)
 
 ## Modules

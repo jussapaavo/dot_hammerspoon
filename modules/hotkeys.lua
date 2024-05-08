@@ -116,12 +116,5 @@ hs.hotkey.bind({"cmd", "alt"}, "down", if_finder_then_open_file_in_vscode)
 print("Set hotkey for toggling caps lock")
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f19", function() hs.hid.capslock.toggle(); end)
 
--- Global hotkey for muting microphone
-hs.loadSpoon("MicMute")
-customBindings = {
-    toggle = {{"cmd", "alt", "ctrl"}, "m"}
-}
-spoon.MicMute:bindHotkeys(customBindings, 1)
-
 -- Hotkey for forcing Spotify playpause from media key
 Hyper:bind({"cmd"}, "s", function() hs.spotify.playpause(); end)
