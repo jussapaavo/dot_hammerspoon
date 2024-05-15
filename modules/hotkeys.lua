@@ -16,6 +16,11 @@ Config.applications = {
         bundleID = "com.google.Chrome",
         hyperKey = "3"
     },
+    ["Bear"] = {
+        bundleID = "net.shinyfrog.bear",
+        hyperKey = "b",
+        localBindings = {"n"}
+    },
     ["Drafts"] = {
         bundleID = "com.agiletortoise.Drafts-OSX",
         hyperKey = "d",
