@@ -44,24 +44,22 @@ Hyper:bindHotKeys({hyperKey = {{}, "F19"}})
 launch_application = function(app_bundleID)
     local app = hs.application.get(app_bundleID)
     if app then
-        if app:isFrontmost() then
-            app:hide()
-        else
-            app:activate()
-        end
-    else
-        hs.application.launchOrFocusByBundleID(app_bundleID)
-    end
-end
-
--- Special function for opening Finder
-launch_finder = function(app_bundleID)
-    local app = hs.application.get(app_bundleID)
-    if app then
-        local window_count = #app:visibleWindows()
-
-        if window_count == 1 then
-            hs.osascript.applescript([[tell application id "com.apple.finder" to make new Finder window to home]])
+        -- Special case for Finder
+        if app_bundleID == "com.apple.finder" then
+            local window_count = #app:visibleWindows()
+            if window_count == 1 then
+                hs.osascript.applescript([[tell application id "com.apple.finder" to make new Finder window to home]])
+            end
+        -- Special case for Kitty
+        elseif app_bundleID == "net.kovidgoyal.kitty" then
+            local window_count = #app:allWindows()
+            if window_count == 0 then
+                hs.osascript.applescript([[
+                tell application "System Events" to tell process "kitty"
+                    click menu item "New OS Window" of menu 1 of menu bar item "Shell" of menu bar 1
+                    activate
+                end tell]])
+            end
         end
 
         if app:isFrontmost() then
@@ -78,11 +76,7 @@ end
 hs.fnutils.each(Config.applications, function(appConfig)
 
     if appConfig.hyperKey then
-        if appConfig.bundleID == "com.apple.finder" then
-            Hyper:bind({}, appConfig.hyperKey, function() launch_finder(appConfig.bundleID); end)
-        else
-            Hyper:bind({}, appConfig.hyperKey, function() launch_application(appConfig.bundleID) end)
-        end
+        Hyper:bind({}, appConfig.hyperKey, function() launch_application(appConfig.bundleID) end)
     end
 
     if appConfig.localBindings then
