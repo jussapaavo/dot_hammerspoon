@@ -117,3 +117,17 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "f19", function() hs.hid.capslock.toggle(
 
 -- Hotkey for forcing Spotify playpause from media key
 Hyper:bind({"cmd"}, "s", function() hs.spotify.playpause(); end)
+
+-- Hotkey for muting Teams & Zoom
+function toggleMute()
+    local teams = hs.application.get("com.microsoft.teams2")
+    local zoom = hs.application.get("us.zoom.xos")
+    if not (teams == null) then
+        hs.eventtap.keyStroke({"cmd","shift"}, "m", 0, teams)
+    end
+    if not (zoom == nil) then
+        hs.eventtap.keyStroke({"cmd","shift"}, "a", 0, zoom)
+    end
+end
+
+Hyper:bind({"cmd"}, "m", toggleMute)
