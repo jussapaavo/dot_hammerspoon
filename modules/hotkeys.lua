@@ -4,8 +4,8 @@
 -- Inspiration from: https://github.com/evantravers/hammerspoon-config
 Config = {}
 Config.applications = {
-    ["kitty"] = {
-        bundleID = "net.kovidgoyal.kitty",
+    ["Ghostty"] = {
+        bundleID = "com.mitchellh.ghostty",
         hyperKey = "1",
     },
     ["Code"] = {
@@ -50,13 +50,13 @@ launch_application = function(app_bundleID)
             if window_count == 1 then
                 hs.osascript.applescript([[tell application id "com.apple.finder" to make new Finder window to home]])
             end
-        -- Special case for Kitty
-        elseif app_bundleID == "net.kovidgoyal.kitty" then
+        -- Special case for terminal that is "always on"
+        elseif app_bundleID == "com.mitchellh.ghostty" then
             local window_count = #app:allWindows()
             if window_count == 0 then
                 hs.osascript.applescript([[
-                tell application "System Events" to tell process "kitty"
-                    click menu item "New OS Window" of menu 1 of menu bar item "Shell" of menu bar 1
+                tell application "System Events" to tell process "Ghostty"
+                    click menu item "New Window" of menu 1 of menu bar item "File" of menu bar 1
                     activate
                 end tell]])
             end
