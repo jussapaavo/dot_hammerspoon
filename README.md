@@ -12,7 +12,7 @@ Intelligent macOS automation.
 - [debug](./debug.lua): Utility scripts to help debugging.
 - [hotkeys](./hotkeys.lua): Personal hotkey configuration.
 - [init](./init.lua): The main entrypoint and configuration file for Hammerspoon.
-- [movewindows](./movewindows.lua): Hotkeys for window management.
+- [text_transforms](./modules/text_transforms.lua): System-wide case-changing and text-fencing shortcuts.
 
 ## Install
 
